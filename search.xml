@@ -7,7 +7,7 @@
 <ul>
 <li>enforcing: 强制模式, 执行SELinux规则, 违反的行为会被阻止</li>
 <li>permissive: 宽容模式, 执行SELinux规则, 违反的行不会被阻止</li>
-<li>disabled: 关闭SELinux<br>在工作在强制模式的时候，违反SELinux规则的操作，则无法进行，在Log中会出现很多“avc denied”的Log信息,本文介绍一种快速解决avc denied 的方法。<span id="more"></span></li>
+<li>disabled: 关闭SELinux<br>工作在强制模式的时候，违反SELinux规则的操作，则无法进行，在Log中会出现很多“avc denied”的Log信息,本文介绍一种快速解决avc denied 的方法。<span id="more"></span></li>
 </ul>
 <h2 id="使用policycoreutils-工具"><a href="#使用policycoreutils-工具" class="headerlink" title="使用policycoreutils 工具"></a>使用policycoreutils 工具</h2><p>Ubuntu系统安装policycoreutils工具<br><code>$sudo apt-get install policycoreutils</code></p>
 <h2 id="导出log信息"><a href="#导出log信息" class="headerlink" title="导出log信息"></a>导出log信息</h2><p>将Android平台中avc denied的Log全部导出来<br><code>dmesg | grep avc  &gt; /sdcard/avc.txt </code></p>
@@ -20,12 +20,12 @@
 <blockquote>
 <p>out&#x2F;target&#x2F;product&#x2F;marconi&#x2F;obj&#x2F;ETC&#x2F;sepolicy.recovery_intermediates&#x2F;sepolicy.permissivedomains 1&gt;&amp;2;         exit 1; fi ) &amp;&amp; (mv out&#x2F;target&#x2F;product&#x2F;marconi&#x2F;obj&#x2F;ETC&#x2F;sepolicy.recovery_intermediates&#x2F;sepolicy.tmp out&#x2F;target&#x2F;product&#x2F;marconi&#x2F;obj&#x2F;ETC&#x2F;sepolicy.recovery_intermediates&#x2F;sepolicy )”<br>libsepol.report_failure: neverallow on line 532 of system&#x2F;sepolicy&#x2F;public&#x2F;dnsmasq.te (or line 10498 of policy.conf) violated by allow system_app default_prop:property_service { set };<br>libsepol.check_assertions: 1 neverallow failures occurred<br>Error while expanding policy<br>out&#x2F;host&#x2F;linux-x86&#x2F;bin&#x2F;checkpo  </p>
 </blockquote>
-<p>一个简单解决方法：找到冲突的地方，屏蔽或者过滤掉，但是这样会造成无法通过CTS 测试。 如上面我们就可以发现是domain.te 不允许设置default_prop  </p>
+<p>一个简单解决方法：找到冲突的地方，屏蔽或者过滤掉。 如上面的错误，我分析发现是domain.te 不允许设置default_prop  </p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Require that domains explicitly label unknown properties, and do not allow</span><br><span class="line"># anyone but init to modify unknown properties.</span><br><span class="line"></span><br><span class="line">neverallow &#123; domain -init -vendor_init &#125; default_prop:property_service set;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">compatible_property_only(`</span><br><span class="line">   neverallow &#123; domain -init &#125; default_prop:property_service set;</span><br><span class="line">   neverallow &#123; domain -init &#125; mmc_prop:property_service set;</span><br><span class="line">   neverallow &#123; domain -init -vendor_init &#125; exported_default_prop:property_service set;neverallow &#123; domain -init &#125; exported_secure_prop:property_service set;</span><br></pre></td></tr></table></figure>
 
 <p>我们添加 -system_app ，意思neverallow这条规则中对 system_app 不起作用   </p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">--- public/domain.te    (revision 830)</span><br><span class="line">+++ public/domain.te    (working copy)</span><br><span class="line">@@ -529,11 +529,11 @@</span><br><span class="line"> </span><br><span class="line"> # Require that domains explicitly label unknown properties, and do not allow</span><br><span class="line"> # anyone but init to modify unknown properties.</span><br><span class="line">-neverallow &#123; domain -init -vendor_init &#125; default_prop:property_service set;</span><br><span class="line">+neverallow &#123; domain -init -vendor_init -system_app &#125; default_prop:property_service set;</span><br><span class="line"> neverallow &#123; domain -init -vendor_init &#125; mmc_prop:property_service set;</span><br><span class="line"> </span><br><span class="line"> compatible_property_only(`</span><br><span class="line">-    neverallow &#123; domain -init &#125; default_prop:property_service set;</span><br><span class="line">+    neverallow &#123; domain -init -system_app &#125; default_prop:property_service set;</span><br><span class="line">     neverallow &#123; domain -init &#125; mmc_prop:property_service set;</span><br><span class="line">     neverallow &#123; domain -init -vendor_init &#125; exported_default_prop:property_service set;</span><br><span class="line">     neverallow &#123; domain -init &#125; exported_secure_prop:property_service set;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>在system&#x2F;sepolicy 下面mm 编译测试就能通过了。</p>
+<p>在system&#x2F;sepolicy 下面mm 编译测试就能通过了。这样的解决方式会有一个弊端，就是造成无法通过CTS 测试，所以只能自己取舍咯。</p>
 ]]></content>
       <categories>
         <category>Android</category>
