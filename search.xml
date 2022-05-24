@@ -45,6 +45,26 @@
       </categories>
   </entry>
   <entry>
+    <title>github_dns</title>
+    <url>/archives/e6ed7f90.html</url>
+    <content><![CDATA[<h2 id="问题发现"><a href="#问题发现" class="headerlink" title="问题发现"></a>问题发现</h2><p>今天部署hexo博客时候发现失败，然后ssh -T -v <span class="exturl" data-url="bWFpbHRvOiYjMTAzOyYjMTA1OyYjeDc0OyYjNjQ7JiN4Njc7JiMxMDU7JiN4NzQ7JiMxMDQ7JiN4NzU7JiM5ODsmI3gyZTsmI3g2MzsmI3g2ZjsmI3g2ZDs=">&#103;&#105;&#x74;&#64;&#x67;&#105;&#x74;&#104;&#x75;&#98;&#x2e;&#x63;&#x6f;&#x6d;<i class="fa fa-external-link-alt"></i></span>的时候居然发现 github.com 解析到IP地址为 127.0.0.1. <del>（看来不知道广东电信抽啥风，屏蔽了githu.com）</del></p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>知道问题原因了，就好解决了。  </p>
+<ol>
+<li>查询正确的IP地址<img src="/archives/e6ed7f90/whatsmydns.me.png" class="" title="DNS查询">
+选择一个可以ping通，且延迟低的IP地址</li>
+<li>修改host文件<br>Windows 系统位于 C:\Windows\System32\drivers\etc\hosts<img src="/archives/e6ed7f90/hosts.png" class="" title="hosts"></li>
+<li>刷新DNS<br>在CMD中<code>ping github.com </code>看是否解析为我们hosts文件中的IP，如果不是可以使用<code>ipconfig /flushdns</code> 命令刷新DNS缓存</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>github</tag>
+        <tag>DNS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>我的hexo的配置</title>
     <url>/archives/cdec4cbd.html</url>
     <content><![CDATA[<h2 id="首页只显示摘要"><a href="#首页只显示摘要" class="headerlink" title="首页只显示摘要"></a>首页只显示摘要</h2><ol>
