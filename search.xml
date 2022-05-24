@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/archives/4a17b156.html</url>
-    <content><![CDATA[<p>很早之前就开始过用Hexo + GitPages 建立博客，但是一直懒得写博客，今天趁着假期开始，每周写点东西，整理笔记也好，写点感悟也好，我，这次要重新出发！</p>
-]]></content>
-      <categories>
-        <category>Blog</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Android解决avc denied问题方法</title>
     <url>/archives/272a02c7.html</url>
     <content><![CDATA[<p> Android SELinux 有三种工作模式:</p>
@@ -43,6 +34,15 @@
         <tag>Android</tag>
         <tag>SeLinux</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/archives/4a17b156.html</url>
+    <content><![CDATA[<p>很早之前就开始过用Hexo + GitPages 建立博客，但是一直懒得写博客，今天趁着假期开始，每周写点东西，整理笔记也好，写点感悟也好，我，这次要重新出发！</p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
   </entry>
   <entry>
     <title>我的hexo的配置</title>
