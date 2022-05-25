@@ -6,7 +6,7 @@
   <link href="http://www.haocloud.top/atom.xml" rel="self"/>
   
   <link href="http://www.haocloud.top/"/>
-  <updated>2022-05-24T15:19:41.247Z</updated>
+  <updated>2022-05-24T15:23:57.673Z</updated>
   <id>http://www.haocloud.top/</id>
   
   <author>
@@ -17,16 +17,16 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>github_dns</title>
+    <title>解决github.com解析为127.0.0.1的问题</title>
     <link href="http://www.haocloud.top/archives/e6ed7f90.html"/>
     <id>http://www.haocloud.top/archives/e6ed7f90.html</id>
     <published>2022-05-24T15:02:45.000Z</published>
-    <updated>2022-05-24T15:19:41.247Z</updated>
+    <updated>2022-05-24T15:23:57.673Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="问题发现"><a href="#问题发现" class="headerlink" title="问题发现"></a>问题发现</h2><p>今天部署hexo博客时候发现失败，然后ssh -T -v <span class="exturl" data-url="bWFpbHRvOiYjMTAzOyYjeDY5OyYjMTE2OyYjNjQ7JiMxMDM7JiN4Njk7JiN4NzQ7JiN4Njg7JiN4NzU7JiN4NjI7JiM0NjsmI3g2MzsmI3g2ZjsmIzEwOTs=">&#103;&#x69;&#116;&#64;&#103;&#x69;&#x74;&#x68;&#x75;&#x62;&#46;&#x63;&#x6f;&#109;<i class="fa fa-external-link-alt"></i></span>的时候居然发现 github.com 解析到IP地址为 127.0.0.1，而我自己的hosts文件里面没有改过github的解析。 <del>（看来不知道国内DNS解析商抽啥风，屏蔽了github.com）</del></p><span id="more"></span><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>知道问题原因了，就好解决了。  </p><ol><li>查询正确的IP地址<img src="/archives/e6ed7f90/whatsmydns.me.png" class="" title="DNS查询">选择一个可以ping通，且延迟低的IP地址</li><li>修改host文件<br>Windows 系统位于 C:\Windows\System32\drivers\etc\hosts<img src="/archives/e6ed7f90/hosts.png" class="" title="hosts"></li><li>刷新DNS<br>在CMD中<code>ping github.com </code>看是否解析为我们hosts文件中的IP，如果不是可以使用<code>ipconfig /flushdns</code> 命令刷新DNS缓存</li></ol>]]></content>
+    <content type="html"><![CDATA[<h2 id="问题发现"><a href="#问题发现" class="headerlink" title="问题发现"></a>问题发现</h2><p>今天部署hexo博客时候发现失败，然后ssh -T -v <span class="exturl" data-url="bWFpbHRvOiYjMTAzOyYjMTA1OyYjeDc0OyYjeDQwOyYjMTAzOyYjeDY5OyYjeDc0OyYjMTA0OyYjMTE3OyYjOTg7JiM0NjsmIzk5OyYjMTExOyYjeDZkOw==">&#103;&#105;&#x74;&#x40;&#103;&#x69;&#x74;&#104;&#117;&#98;&#46;&#99;&#111;&#x6d;<i class="fa fa-external-link-alt"></i></span>的时候居然发现 github.com 解析到IP地址为 127.0.0.1，而我自己的hosts文件里面没有改过github的解析。 <del>（看来不知道国内DNS解析商抽啥风，屏蔽了github.com）</del></p><span id="more"></span><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>知道问题原因了，就好解决了。  </p><ol><li>查询正确的IP地址<img src="/archives/e6ed7f90/whatsmydns.me.png" class="" title="DNS查询">选择一个可以ping通，且延迟低的IP地址</li><li>修改host文件<br>Windows 系统位于 C:\Windows\System32\drivers\etc\hosts<img src="/archives/e6ed7f90/hosts.png" class="" title="hosts"></li><li>刷新DNS<br>在CMD中<code>ping github.com </code>看是否解析为我们hosts文件中的IP，如果不是可以使用<code>ipconfig /flushdns</code> 命令刷新DNS缓存</li></ol>]]></content>
     
     
-    <summary type="html">&lt;h2 id=&quot;问题发现&quot;&gt;&lt;a href=&quot;#问题发现&quot; class=&quot;headerlink&quot; title=&quot;问题发现&quot;&gt;&lt;/a&gt;问题发现&lt;/h2&gt;&lt;p&gt;今天部署hexo博客时候发现失败，然后ssh -T -v &lt;a href=&quot;mailto:&amp;#103;&amp;#x69;&amp;#116;&amp;#64;&amp;#103;&amp;#x69;&amp;#x74;&amp;#x68;&amp;#x75;&amp;#x62;&amp;#46;&amp;#x63;&amp;#x6f;&amp;#109;&quot;&gt;&amp;#103;&amp;#x69;&amp;#116;&amp;#64;&amp;#103;&amp;#x69;&amp;#x74;&amp;#x68;&amp;#x75;&amp;#x62;&amp;#46;&amp;#x63;&amp;#x6f;&amp;#109;&lt;/a&gt;的时候居然发现 github.com 解析到IP地址为 127.0.0.1，而我自己的hosts文件里面没有改过github的解析。 &lt;del&gt;（看来不知道国内DNS解析商抽啥风，屏蔽了github.com）&lt;/del&gt;&lt;/p&gt;</summary>
+    <summary type="html">&lt;h2 id=&quot;问题发现&quot;&gt;&lt;a href=&quot;#问题发现&quot; class=&quot;headerlink&quot; title=&quot;问题发现&quot;&gt;&lt;/a&gt;问题发现&lt;/h2&gt;&lt;p&gt;今天部署hexo博客时候发现失败，然后ssh -T -v &lt;a href=&quot;mailto:&amp;#103;&amp;#105;&amp;#x74;&amp;#x40;&amp;#103;&amp;#x69;&amp;#x74;&amp;#104;&amp;#117;&amp;#98;&amp;#46;&amp;#99;&amp;#111;&amp;#x6d;&quot;&gt;&amp;#103;&amp;#105;&amp;#x74;&amp;#x40;&amp;#103;&amp;#x69;&amp;#x74;&amp;#104;&amp;#117;&amp;#98;&amp;#46;&amp;#99;&amp;#111;&amp;#x6d;&lt;/a&gt;的时候居然发现 github.com 解析到IP地址为 127.0.0.1，而我自己的hosts文件里面没有改过github的解析。 &lt;del&gt;（看来不知道国内DNS解析商抽啥风，屏蔽了github.com）&lt;/del&gt;&lt;/p&gt;</summary>
     
     
     
