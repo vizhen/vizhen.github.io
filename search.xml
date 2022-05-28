@@ -38,7 +38,7 @@
   <entry>
     <title>解决github.com解析为127.0.0.1的问题</title>
     <url>/archives/e6ed7f90.html</url>
-    <content><![CDATA[<h2 id="问题发现"><a href="#问题发现" class="headerlink" title="问题发现"></a>问题发现</h2><p>今天部署hexo博客时候发现失败，然后ssh -T -v <span class="exturl" data-url="bWFpbHRvOiYjeDY3OyYjeDY5OyYjeDc0OyYjeDQwOyYjMTAzOyYjeDY5OyYjeDc0OyYjeDY4OyYjMTE3OyYjOTg7JiM0NjsmI3g2MzsmI3g2ZjsmIzEwOTs=">&#x67;&#x69;&#x74;&#x40;&#103;&#x69;&#x74;&#x68;&#117;&#98;&#46;&#x63;&#x6f;&#109;<i class="fa fa-external-link-alt"></i></span>的时候居然发现 github.com 解析到IP地址为 127.0.0.1，而我自己的hosts文件里面没有改过github的解析。 <del>（看来不知道国内DNS解析商抽啥风，屏蔽了github.com）</del></p>
+    <content><![CDATA[<h2 id="问题发现"><a href="#问题发现" class="headerlink" title="问题发现"></a>问题发现</h2><p>今天部署hexo博客时候发现失败，然后ssh -T -v <span class="exturl" data-url="bWFpbHRvOiYjMTAzOyYjeDY5OyYjMTE2OyYjNjQ7JiN4Njc7JiN4Njk7JiN4NzQ7JiN4Njg7JiMxMTc7JiN4NjI7JiM0NjsmIzk5OyYjMTExOyYjeDZkOw==">&#103;&#x69;&#116;&#64;&#x67;&#x69;&#x74;&#x68;&#117;&#x62;&#46;&#99;&#111;&#x6d;<i class="fa fa-external-link-alt"></i></span>的时候居然发现 github.com 解析到IP地址为 127.0.0.1，而我自己的hosts文件里面没有改过github的解析。 <del>（看来不知道国内DNS解析商抽啥风，屏蔽了github.com）</del></p>
 <span id="more"></span>
 
 <h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>知道问题原因了，就好解决了。  </p>
@@ -65,48 +65,6 @@
       <categories>
         <category>Blog</category>
       </categories>
-  </entry>
-  <entry>
-    <title>声音基础知识</title>
-    <url>/archives/68ea15fc.html</url>
-    <content><![CDATA[<h2 id="声音是什么"><a href="#声音是什么" class="headerlink" title="声音是什么"></a>声音是什么</h2><p>首先我们来回答一个问题：声音是什么？  </p>
-<span id="more"></span>
-<p>这还用问啊，我们用我们自己耳朵听到的东西就是声音啊。我们看看百度百科是怎么解释声音的</p>
-<blockquote>
-<p>声音（sound)是由物体振动产生的声波。是通过介质（空气或固体、液体）传播并能被人或动物听觉器官所感知的波动现象。最初发出振动（震动）的物体叫声源。声音以波的形式振动（震动）传播。声音是声波通过任何介质传播形成的运动。<br>声音是一种波。可以被人耳识别的声（频率在20 Hz~20000 Hz之间），我们称之为声音.  </p>
-</blockquote>
-<p>简单说就是，人耳朵识别到物体振动产生的声波。这里面我们看出来了声音几个关键因素：振动，传播介质，人耳识别。</p>
-<h2 id="录音"><a href="#录音" class="headerlink" title="录音"></a>录音</h2><p>录音也就是说我们把声音怎么保存下来。我们看看留声机是怎么录音的</p>
-<blockquote>
-<p>留声机诞生于1877年。托马斯·阿尔瓦·爱迪生根据电话传话器里的膜板随着说话声会引起震动的现象，拿短针作了试验，从中得到很大的启发。说话的快慢高低能使短针产生相应的不同颤动 。那么，反过来，这种颤动也一定能发出原先的说话声音。</p>
-</blockquote>
-<p>简单的说，探针感受声音产生震动，探针将震动刻录在介质上面，当播放的时候，让探针摩擦介质，还原震动而产生声波，声音就播放出来了。</p>
-<p>随着时代的发展，录音技术更加进步，在计算机时代中，我们麦克风接受外界声音的震动，由于法拉第电磁感应效应，实现了震动转换成电信号，将采集到电压值进行一定格式的编码(PCM)记录在计算机中存储为原始音频文件。播放则按照存储的格式从新将数据取出，转换成数字信号传递给喇叭进行播放。</p>
-<h2 id="采样"><a href="#采样" class="headerlink" title="采样"></a>采样</h2><p>声波是一种机械波，因此也有波长和振幅的特征，波长对应于时间轴线，振幅对应于采样值轴线。波是无限光滑的，弦线可以看成由无数点组成，采样的过程就是抽取某点的采样值，很显然，在单位时间中内抽取的点越多，那么还原声音就越准确。   </p>
-<ul>
-<li>采样率：每秒需要采集多少个点的数据。常用录音16khz频率就是每秒采集声音数据16 000个。</li>
-<li>采用精度：每个点数据用几位(bit)来存储。常用录音16bit。</li>
-<li>采样通道：根据不同录音位置采集到数据就是一个通道，通道越多，我们还原出来的声音也就越精确。我们常说的立体声，也就是模拟人耳采集到左声道和有声道的两个通道的数据。</li>
-</ul>
-<p>常见录音为什么是16k&#x2F;16bit?  </p>
-<blockquote>
-<p>16k采样频率: 实际的情况下，采集频率往往比信号的实际频率要高出5到10倍以上。因为采集频率仅仅高于信号频率的2倍(乃奎斯特定律)的情况下，是很难获取测量的精度的。 而人的发音频率集中在80HZ~1200HZ,所以16KHZ采样频率能够尽量减少失真的情况采集到人的声音信号。</p>
-</blockquote>
-<blockquote>
-<p>16bit采样位数: 2^16&#x3D;65536,20log(65536)约等于96dB的动态范围,足够覆盖一般场景,比如覆盖安静的夜晚(30dB)到球磨机工作(约120dB)。</p>
-</blockquote>
-<p>播放的音频为什么是44.1k  </p>
-<blockquote>
-<p>44.1k播放音频: 因为人耳的听觉范围大概在20Hz～20kHz，如果想还原20khz的音频采样频率至少要40khz ,但是梳状滤波器不可能是完美的，截止频率不能完全截断，所以需要将通带适当放开，增加一个大概10%衰减缓冲的带宽，所以就需要44k的播放音频，具体为什么是44.1k，这个就和播放的格式和数据的编码传输有关。</p>
-</blockquote>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>[1] <span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS8lRTUlQTMlQjAlRTklOUYlQjMvMzM2ODY=">声音<i class="fa fa-external-link-alt"></i></span><br>[2] <span class="exturl" data-url="aHR0cHM6Ly9pb3Qtc3ouYWlzcGVlY2guY29tL2RvYy9jaWNhZGEtZG9jLyMvU2NpZW5jZUFydGljbGVzLw==">认识声音<i class="fa fa-external-link-alt"></i></span></p>
-]]></content>
-      <categories>
-        <category>编程技术</category>
-      </categories>
-      <tags>
-        <tag>计算机基础</tag>
-      </tags>
   </entry>
   <entry>
     <title>我的hexo的配置</title>
@@ -154,6 +112,69 @@
       <tags>
         <tag>hexo</tag>
         <tag>hexo-next-theme</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>声音基础知识</title>
+    <url>/archives/68ea15fc.html</url>
+    <content><![CDATA[<h2 id="声音是什么"><a href="#声音是什么" class="headerlink" title="声音是什么"></a>声音是什么</h2><p>首先我们来回答一个问题：声音是什么？  </p>
+<span id="more"></span>
+<p>这还用问啊，我们用我们自己耳朵听到的东西就是声音啊。我们看看百度百科是怎么解释声音的</p>
+<blockquote>
+<p>声音（sound)是由物体振动产生的声波。是通过介质（空气或固体、液体）传播并能被人或动物听觉器官所感知的波动现象。最初发出振动（震动）的物体叫声源。声音以波的形式振动（震动）传播。声音是声波通过任何介质传播形成的运动。<br>声音是一种波。可以被人耳识别的声（频率在20 Hz~20000 Hz之间），我们称之为声音.  </p>
+</blockquote>
+<p>简单说就是，人耳朵识别到物体振动产生的声波。这里面我们看出来了声音几个关键因素：振动，传播介质，人耳识别。</p>
+<h2 id="录音"><a href="#录音" class="headerlink" title="录音"></a>录音</h2><p>录音也就是说我们把声音怎么保存下来。我们看看留声机是怎么录音的</p>
+<blockquote>
+<p>留声机诞生于1877年。托马斯·阿尔瓦·爱迪生根据电话传话器里的膜板随着说话声会引起震动的现象，拿短针作了试验，从中得到很大的启发。说话的快慢高低能使短针产生相应的不同颤动 。那么，反过来，这种颤动也一定能发出原先的说话声音。</p>
+</blockquote>
+<p>简单的说，探针感受声音产生震动，探针将震动刻录在介质上面，当播放的时候，让探针摩擦介质，还原震动而产生声波，声音就播放出来了。</p>
+<p>随着时代的发展，录音技术更加进步，在计算机时代中，我们麦克风接受外界声音的震动，由于法拉第电磁感应效应，实现了震动转换成电信号，将采集到电压值进行一定格式的编码(PCM)记录在计算机中存储为原始音频文件。播放则按照存储的格式从新将数据取出，转换成数字信号传递给喇叭进行播放。</p>
+<h2 id="采样"><a href="#采样" class="headerlink" title="采样"></a>采样</h2><p>声波是一种机械波，因此也有波长和振幅的特征，波长对应于时间轴线，振幅对应于采样值轴线。波是无限光滑的，弦线可以看成由无数点组成，采样的过程就是抽取某点的采样值，很显然，在单位时间中内抽取的点越多，那么还原声音就越准确。   </p>
+<ul>
+<li>采样率：每秒需要采集多少个点的数据。常用录音16khz频率就是每秒采集声音数据16 000个。</li>
+<li>采用精度：每个点数据用几位(bit)来存储。常用录音16bit。</li>
+<li>采样通道：根据不同录音位置采集到数据就是一个通道，通道越多，我们还原出来的声音也就越精确。我们常说的立体声，也就是模拟人耳采集到左声道和有声道的两个通道的数据。</li>
+</ul>
+<p>常见录音为什么是16k&#x2F;16bit?  </p>
+<blockquote>
+<p>16k采样频率: 实际的情况下，采集频率往往比信号的实际频率要高出5到10倍以上。因为采集频率仅仅高于信号频率的2倍(乃奎斯特定律)的情况下，是很难获取测量的精度的。 而人的发音频率集中在80HZ~1200HZ,所以16KHZ采样频率能够尽量减少失真的情况采集到人的声音信号。</p>
+</blockquote>
+<blockquote>
+<p>16bit采样位数: 2^16&#x3D;65536,20log(65536)约等于96dB的动态范围,足够覆盖一般场景,比如覆盖安静的夜晚(30dB)到球磨机工作(约120dB)。</p>
+</blockquote>
+<p>播放的音频为什么是44.1k  </p>
+<blockquote>
+<p>44.1k播放音频: 因为人耳的听觉范围大概在20Hz～20kHz，如果想还原20khz的音频采样频率至少要40khz ,但是梳状滤波器不可能是完美的，截止频率不能完全截断，所以需要将通带适当放开，增加一个大概10%衰减缓冲的带宽，所以就需要44k的播放音频，具体为什么是44.1k，这个就和播放的格式和数据的编码传输有关。</p>
+</blockquote>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>[1] <span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS8lRTUlQTMlQjAlRTklOUYlQjMvMzM2ODY=">声音<i class="fa fa-external-link-alt"></i></span><br>[2] <span class="exturl" data-url="aHR0cHM6Ly9pb3Qtc3ouYWlzcGVlY2guY29tL2RvYy9jaWNhZGEtZG9jLyMvU2NpZW5jZUFydGljbGVzLw==">认识声音<i class="fa fa-external-link-alt"></i></span></p>
+]]></content>
+      <categories>
+        <category>编程技术</category>
+      </categories>
+      <tags>
+        <tag>计算机基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HEXO博客页面无内容显示</title>
+    <url>/archives/3749a1e5.html</url>
+    <content><![CDATA[<h2 id="问题发现"><a href="#问题发现" class="headerlink" title="问题发现"></a>问题发现</h2><p>在公司打开我的博客时候，发现刷新了半天也没见到内容，如图所示:  </p>
+<img src="/archives/3749a1e5/blog.png" class="" title="页面无内容">
+<span id="more"></span>
+
+<h2 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h2><p>真是一个奇怪的问题，打开浏览器的开发者工具，寻找原因，发现其中的jquery文件访问不到了 <del>估计是伟大的墙的杰作吧</del>  </p>
+<img src="/archives/3749a1e5/chrome.png" class="" title="浏览器开发者工具">  
+<p>cdn.jsdelivr.net 连接超时了，百度一搜，找到了解决办法： <span class="exturl" data-url="aHR0cHM6Ly9sb3Vra3kuY29tL2FyY2hpdmVzLzIxNDA=">cdn.jsdelivr.net 污染解决方案<i class="fa fa-external-link-alt"></i></span><br>在\themes\hexo-theme-next_config.yml 主题文件yml配置文件中，将所有cdn.jsdeliver.net 全部替换为 fastly.jsdelivr.net（选择一个你ping连接延迟最小的）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># FancyBox</span><br><span class="line">  # jquery: //cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js</span><br><span class="line">  # fancybox: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js</span><br><span class="line">  # fancybox_css: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css</span><br><span class="line">  jquery: //fastly.jsdelivr.net/npm/jquery@3/dist/jquery.min.js</span><br><span class="line">  fancybox: //fastly.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js</span><br><span class="line">  fancybox_css: //fastly.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>然后 <code>hexo clean</code> , <code>hexo g</code>  , <code>hexo d</code> 即可。</p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>HEXO</tag>
+        <tag>jsdelivr</tag>
       </tags>
   </entry>
 </search>
