@@ -1,3 +1,4 @@
+http://www.haocloud.top/shuoshuo/index.html
 http://www.haocloud.top/archives/3749a1e5.html
 http://www.haocloud.top/archives/e6ed7f90.html
 http://www.haocloud.top/archives/272a02c7.html
@@ -10,9 +11,9 @@ http://www.haocloud.top/tags/Android/
 http://www.haocloud.top/tags/SeLinux/
 http://www.haocloud.top/tags/github/
 http://www.haocloud.top/tags/DNS/
+http://www.haocloud.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/
 http://www.haocloud.top/tags/hexo/
 http://www.haocloud.top/tags/hexo-next-theme/
-http://www.haocloud.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/
 http://www.haocloud.top/tags/jsdelivr/
 http://www.haocloud.top/categories/Android/
 http://www.haocloud.top/categories/Blog/
