@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.haocloud.top/tags/index.html</loc>
+    
+    <lastmod>2022-06-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://www.haocloud.top/shuoshuo/index.html</loc>
     
     <lastmod>2022-06-04</lastmod>
@@ -76,7 +85,7 @@
 
   <url>
     <loc>http://www.haocloud.top/</loc>
-    <lastmod>2022-06-04</lastmod>
+    <lastmod>2022-06-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -84,56 +93,56 @@
   
   <url>
     <loc>http://www.haocloud.top/tags/Android/</loc>
-    <lastmod>2022-06-04</lastmod>
+    <lastmod>2022-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://www.haocloud.top/tags/SeLinux/</loc>
-    <lastmod>2022-06-04</lastmod>
+    <lastmod>2022-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://www.haocloud.top/tags/github/</loc>
-    <lastmod>2022-06-04</lastmod>
+    <lastmod>2022-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://www.haocloud.top/tags/DNS/</loc>
-    <lastmod>2022-06-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.haocloud.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2022-06-04</lastmod>
+    <lastmod>2022-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://www.haocloud.top/tags/hexo/</loc>
-    <lastmod>2022-06-04</lastmod>
+    <lastmod>2022-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://www.haocloud.top/tags/hexo-next-theme/</loc>
-    <lastmod>2022-06-04</lastmod>
+    <lastmod>2022-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.haocloud.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2022-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://www.haocloud.top/tags/jsdelivr/</loc>
-    <lastmod>2022-06-04</lastmod>
+    <lastmod>2022-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -142,21 +151,21 @@
   
   <url>
     <loc>http://www.haocloud.top/categories/Android/</loc>
-    <lastmod>2022-06-04</lastmod>
+    <lastmod>2022-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://www.haocloud.top/categories/Blog/</loc>
-    <lastmod>2022-06-04</lastmod>
+    <lastmod>2022-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://www.haocloud.top/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/</loc>
-    <lastmod>2022-06-04</lastmod>
+    <lastmod>2022-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
