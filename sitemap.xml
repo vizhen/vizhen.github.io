@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.haocloud.top/archives/3912a5ad.html</loc>
+    
+    <lastmod>2022-06-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://www.haocloud.top/tags/index.html</loc>
     
     <lastmod>2022-06-04</lastmod>
@@ -147,6 +156,20 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>http://www.haocloud.top/tags/%E6%91%84%E5%BD%B1/</loc>
+    <lastmod>2022-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.haocloud.top/tags/%E6%9E%84%E5%9B%BE%E6%8A%80%E5%B7%A7/</loc>
+    <lastmod>2022-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -165,6 +188,13 @@
   
   <url>
     <loc>http://www.haocloud.top/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/</loc>
+    <lastmod>2022-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.haocloud.top/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2022-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
