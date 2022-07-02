@@ -67,7 +67,7 @@
   <entry>
     <title>解决github.com解析为127.0.0.1的问题</title>
     <url>/archives/e6ed7f90.html</url>
-    <content><![CDATA[<h2 id="问题发现"><a href="#问题发现" class="headerlink" title="问题发现"></a>问题发现</h2><p>今天部署hexo博客时候发现失败，然后ssh -T -v <span class="exturl" data-url="bWFpbHRvOiYjMTAzOyYjeDY5OyYjMTE2OyYjNjQ7JiN4Njc7JiN4Njk7JiN4NzQ7JiN4Njg7JiMxMTc7JiN4NjI7JiM0NjsmIzk5OyYjMTExOyYjMTA5Ow==">&#103;&#x69;&#116;&#64;&#x67;&#x69;&#x74;&#x68;&#117;&#x62;&#46;&#99;&#111;&#109;<i class="fa fa-external-link-alt"></i></span>的时候居然发现 github.com 解析到IP地址为 127.0.0.1，而我自己的hosts文件里面没有改过github的解析。 <del>（看来不知道国内DNS解析商抽啥风，屏蔽了github.com）</del></p>
+    <content><![CDATA[<h2 id="问题发现"><a href="#问题发现" class="headerlink" title="问题发现"></a>问题发现</h2><p>今天部署hexo博客时候发现失败，然后ssh -T -v <span class="exturl" data-url="bWFpbHRvOiYjeDY3OyYjMTA1OyYjeDc0OyYjeDQwOyYjMTAzOyYjMTA1OyYjeDc0OyYjMTA0OyYjeDc1OyYjOTg7JiM0NjsmI3g2MzsmIzExMTsmI3g2ZDs=">&#x67;&#105;&#x74;&#x40;&#103;&#105;&#x74;&#104;&#x75;&#98;&#46;&#x63;&#111;&#x6d;<i class="fa fa-external-link-alt"></i></span>的时候居然发现 github.com 解析到IP地址为 127.0.0.1，而我自己的hosts文件里面没有改过github的解析。 <del>（看来不知道国内DNS解析商抽啥风，屏蔽了github.com）</del></p>
 <span id="more"></span>
 
 <h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>知道问题原因了，就好解决了。  </p>
@@ -146,10 +146,12 @@
   <entry>
     <title>OMV手把手教学之Portainer</title>
     <url>/archives/96236505.html</url>
-    <content><![CDATA[<p><img src="/portainer%5C1.jpg"><br>Portainer是一个可视化管理Docker容器的工具，能够非常方便拉取镜像，创建容器，管理容器等等功能。</p>
+    <content><![CDATA[<img src="/archives/96236505/1.jpg" class="">  
+<p>Portainer是一个可视化管理Docker容器的工具，能够直观地拉取镜像，创建容器，管理容器等等操作。</p>
 <span id="more"></span>
 <h2 id="安装Portainer"><a href="#安装Portainer" class="headerlink" title="安装Portainer"></a>安装Portainer</h2><h2 id="使用docker镜像加速"><a href="#使用docker镜像加速" class="headerlink" title="使用docker镜像加速"></a>使用docker镜像加速</h2><p>阿里云注册开发者账号，可以获得一个镜像加速地址。</p>
-<h2 id="修改IP"><a href="#修改IP" class="headerlink" title="修改IP"></a>修改IP</h2><p>默认的容器宿主IP是127.0.0.1，使用起来不是很方便，我们可以自己修改这个IP，在Settings -&gt; Enviroments -&gt; local -&gt; Public IP.<br><img src="/portainer%5C2.png" alt="修改IP"></p>
+<h2 id="修改IP"><a href="#修改IP" class="headerlink" title="修改IP"></a>修改IP</h2><p>默认的容器宿主IP是127.0.0.1，使用起来不是很方便，我们可以自己修改这个IP，在Settings -&gt; Enviroments -&gt; local -&gt; Public IP.</p>
+<img src="/archives/96236505/2.png" class="" title="修改IP">
 ]]></content>
       <categories>
         <category>折腾</category>
