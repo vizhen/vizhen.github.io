@@ -6,7 +6,7 @@
   <link href="http://www.haocloud.top/atom.xml" rel="self"/>
   
   <link href="http://www.haocloud.top/"/>
-  <updated>2022-06-12T06:43:12.517Z</updated>
+  <updated>2022-07-02T11:35:06.063Z</updated>
   <id>http://www.haocloud.top/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python学习笔记之Requests</title>
+    <link href="http://www.haocloud.top/archives/60eff005.html"/>
+    <id>http://www.haocloud.top/archives/60eff005.html</id>
+    <published>2022-07-02T10:23:54.000Z</published>
+    <updated>2022-07-02T11:35:06.063Z</updated>
+    
+    <content type="html"><![CDATA[<p>Requests是Python中的一个处理HTTP库，通过它我们可以轻松的获取网络资源。</p><span id="more"></span><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装库很简单： <code>$ python -m pip install requests </code></p><h2 id="打开网页"><a href="#打开网页" class="headerlink" title="打开网页"></a>打开网页</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">r = requests.get(&#x27;https://markdown.com.cn/&#x27;)</span><br></pre></td></tr></table></figure><p>读取网页内容</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r.text</span><br></pre></td></tr></table></figure><p>r.encoding 可以显示当前r.text 内容的编码格式，也可以通过它指定编码，如使用UTF-8 编码，再调用r.text 就能安装UTF-8读取网页内容了</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">r.encoding = &quot;utf-8&quot;</span><br><span class="line">r.text</span><br></pre></td></tr></table></figure><h2 id="获取图片"><a href="#获取图片" class="headerlink" title="获取图片"></a>获取图片</h2><p>如果是一个图片地址，我们可以用r.content 按照二进制数据获取图片文件,下面就是将网络图片文件保存在本地，名称位test.jpg</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">r = requests.get(&#x27;http://wx1.sinaimg.cn/nmw690/0085qV8vgy1gy1jac7097j30u01417a0.jpg&#x27;)</span><br><span class="line">data = r.content</span><br><span class="line">try:</span><br><span class="line">    with open(&quot;test.jpg&quot;, &#x27;wb&#x27;) as f:</span><br><span class="line">        f.write(data)</span><br><span class="line">        f.close()</span><br><span class="line">except Exception as e:</span><br><span class="line">    print(str(e))</span><br></pre></td></tr></table></figure><h2 id="获取JSON数据"><a href="#获取JSON数据" class="headerlink" title="获取JSON数据"></a>获取JSON数据</h2><p>通过r.json可以之际获取json数据  </p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">r = requests.get(&#x27;https://api.github.com/events&#x27;)</span><br><span class="line">r.json()</span><br></pre></td></tr></table></figure><h2 id="自定义Header"><a href="#自定义Header" class="headerlink" title="自定义Header"></a>自定义Header</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url = &#x27;https://api.github.com/some/endpoint&#x27;</span><br><span class="line">headers = &#123;&#x27;user-agent&#x27;: &#x27;my-app/0.0.1&#x27;&#125;</span><br><span class="line"></span><br><span class="line">r = requests.get(url, headers=headers)</span><br></pre></td></tr></table></figure><p>学习 <span class="exturl" data-url="aHR0cHM6Ly9yZXF1ZXN0cy5yZWFkdGhlZG9jcy5pby9lbi9sYXRlc3QvIw==">更多<i class="fa fa-external-link-alt"></i></span></p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;Requests是Python中的一个处理HTTP库，通过它我们可以轻松的获取网络资源。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="http://www.haocloud.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="Python" scheme="http://www.haocloud.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Python/"/>
+    
+    
+    <category term="Python" scheme="http://www.haocloud.top/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>OMV手把手教学之Portainer</title>
+    <link href="http://www.haocloud.top/archives/96236505.html"/>
+    <id>http://www.haocloud.top/archives/96236505.html</id>
+    <published>2022-06-19T13:09:33.000Z</published>
+    <updated>2022-07-02T11:29:01.570Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/portainer%5C1.jpg"><br>Portainer是一个可视化管理Docker容器的工具，能够非常方便拉取镜像，创建容器，管理容器等等功能。</p><span id="more"></span><h2 id="安装Portainer"><a href="#安装Portainer" class="headerlink" title="安装Portainer"></a>安装Portainer</h2><h2 id="使用docker镜像加速"><a href="#使用docker镜像加速" class="headerlink" title="使用docker镜像加速"></a>使用docker镜像加速</h2><p>阿里云注册开发者账号，可以获得一个镜像加速地址。</p><h2 id="修改IP"><a href="#修改IP" class="headerlink" title="修改IP"></a>修改IP</h2><p>默认的容器宿主IP是127.0.0.1，使用起来不是很方便，我们可以自己修改这个IP，在Settings -&gt; Enviroments -&gt; local -&gt; Public IP.<br><img src="/portainer%5C2.png" alt="修改IP"></p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/portainer%5C1.jpg&quot;&gt;&lt;br&gt;Portainer是一个可视化管理Docker容器的工具，能够非常方便拉取镜像，创建容器，管理容器等等功能。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="折腾" scheme="http://www.haocloud.top/categories/%E6%8A%98%E8%85%BE/"/>
+    
+    
+    <category term="OpenMediaValut" scheme="http://www.haocloud.top/tags/OpenMediaValut/"/>
+    
+    <category term="NAS" scheme="http://www.haocloud.top/tags/NAS/"/>
+    
+    <category term="Portainer" scheme="http://www.haocloud.top/tags/Portainer/"/>
+    
+    <category term="Docker" scheme="http://www.haocloud.top/tags/Docker/"/>
+    
+  </entry>
   
   <entry>
     <title>摄影构图笔记</title>
@@ -74,10 +124,10 @@
     <published>2022-05-24T15:02:45.000Z</published>
     <updated>2022-05-24T15:23:57.673Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="问题发现"><a href="#问题发现" class="headerlink" title="问题发现"></a>问题发现</h2><p>今天部署hexo博客时候发现失败，然后ssh -T -v <span class="exturl" data-url="bWFpbHRvOiYjeDY3OyYjeDY5OyYjeDc0OyYjNjQ7JiN4Njc7JiN4Njk7JiN4NzQ7JiMxMDQ7JiN4NzU7JiM5ODsmIzQ2OyYjOTk7JiMxMTE7JiN4NmQ7">&#x67;&#x69;&#x74;&#64;&#x67;&#x69;&#x74;&#104;&#x75;&#98;&#46;&#99;&#111;&#x6d;<i class="fa fa-external-link-alt"></i></span>的时候居然发现 github.com 解析到IP地址为 127.0.0.1，而我自己的hosts文件里面没有改过github的解析。 <del>（看来不知道国内DNS解析商抽啥风，屏蔽了github.com）</del></p><span id="more"></span><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>知道问题原因了，就好解决了。  </p><ol><li>查询正确的IP地址<img src="/archives/e6ed7f90/whatsmydns.me.png" class="" title="DNS查询">选择一个可以ping通，且延迟低的IP地址</li><li>修改host文件<br>Windows 系统位于 C:\Windows\System32\drivers\etc\hosts<img src="/archives/e6ed7f90/hosts.png" class="" title="hosts"></li><li>刷新DNS<br>在CMD中<code>ping github.com </code>看是否解析为我们hosts文件中的IP，如果不是可以使用<code>ipconfig /flushdns</code> 命令刷新DNS缓存</li></ol>]]></content>
+    <content type="html"><![CDATA[<h2 id="问题发现"><a href="#问题发现" class="headerlink" title="问题发现"></a>问题发现</h2><p>今天部署hexo博客时候发现失败，然后ssh -T -v <span class="exturl" data-url="bWFpbHRvOiYjMTAzOyYjeDY5OyYjMTE2OyYjNjQ7JiN4Njc7JiN4Njk7JiN4NzQ7JiN4Njg7JiMxMTc7JiN4NjI7JiM0NjsmIzk5OyYjMTExOyYjMTA5Ow==">&#103;&#x69;&#116;&#64;&#x67;&#x69;&#x74;&#x68;&#117;&#x62;&#46;&#99;&#111;&#109;<i class="fa fa-external-link-alt"></i></span>的时候居然发现 github.com 解析到IP地址为 127.0.0.1，而我自己的hosts文件里面没有改过github的解析。 <del>（看来不知道国内DNS解析商抽啥风，屏蔽了github.com）</del></p><span id="more"></span><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>知道问题原因了，就好解决了。  </p><ol><li>查询正确的IP地址<img src="/archives/e6ed7f90/whatsmydns.me.png" class="" title="DNS查询">选择一个可以ping通，且延迟低的IP地址</li><li>修改host文件<br>Windows 系统位于 C:\Windows\System32\drivers\etc\hosts<img src="/archives/e6ed7f90/hosts.png" class="" title="hosts"></li><li>刷新DNS<br>在CMD中<code>ping github.com </code>看是否解析为我们hosts文件中的IP，如果不是可以使用<code>ipconfig /flushdns</code> 命令刷新DNS缓存</li></ol>]]></content>
     
     
-    <summary type="html">&lt;h2 id=&quot;问题发现&quot;&gt;&lt;a href=&quot;#问题发现&quot; class=&quot;headerlink&quot; title=&quot;问题发现&quot;&gt;&lt;/a&gt;问题发现&lt;/h2&gt;&lt;p&gt;今天部署hexo博客时候发现失败，然后ssh -T -v &lt;a href=&quot;mailto:&amp;#x67;&amp;#x69;&amp;#x74;&amp;#64;&amp;#x67;&amp;#x69;&amp;#x74;&amp;#104;&amp;#x75;&amp;#98;&amp;#46;&amp;#99;&amp;#111;&amp;#x6d;&quot;&gt;&amp;#x67;&amp;#x69;&amp;#x74;&amp;#64;&amp;#x67;&amp;#x69;&amp;#x74;&amp;#104;&amp;#x75;&amp;#98;&amp;#46;&amp;#99;&amp;#111;&amp;#x6d;&lt;/a&gt;的时候居然发现 github.com 解析到IP地址为 127.0.0.1，而我自己的hosts文件里面没有改过github的解析。 &lt;del&gt;（看来不知道国内DNS解析商抽啥风，屏蔽了github.com）&lt;/del&gt;&lt;/p&gt;</summary>
+    <summary type="html">&lt;h2 id=&quot;问题发现&quot;&gt;&lt;a href=&quot;#问题发现&quot; class=&quot;headerlink&quot; title=&quot;问题发现&quot;&gt;&lt;/a&gt;问题发现&lt;/h2&gt;&lt;p&gt;今天部署hexo博客时候发现失败，然后ssh -T -v &lt;a href=&quot;mailto:&amp;#103;&amp;#x69;&amp;#116;&amp;#64;&amp;#x67;&amp;#x69;&amp;#x74;&amp;#x68;&amp;#117;&amp;#x62;&amp;#46;&amp;#99;&amp;#111;&amp;#109;&quot;&gt;&amp;#103;&amp;#x69;&amp;#116;&amp;#64;&amp;#x67;&amp;#x69;&amp;#x74;&amp;#x68;&amp;#117;&amp;#x62;&amp;#46;&amp;#99;&amp;#111;&amp;#109;&lt;/a&gt;的时候居然发现 github.com 解析到IP地址为 127.0.0.1，而我自己的hosts文件里面没有改过github的解析。 &lt;del&gt;（看来不知道国内DNS解析商抽啥风，屏蔽了github.com）&lt;/del&gt;&lt;/p&gt;</summary>
     
     
     
